@@ -1,6 +1,7 @@
 import {Page,NavController, NavParams} from 'ionic-angular';
 import {IonicApp, Modal, Alert} from 'ionic-angular';
 import {MenuPage} from '../menu/menu';
+import {ListPage} from '../list/list';
 import {ProveedoresData} from '../../providers/proveedores';
 
 /*import 'rxjs/add/operator/map';
@@ -27,7 +28,7 @@ export class Restaurantes {
     this.nav = nav;
     this.api = data;
     this.locales = null;
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = navParams.get('local');
     this.getLocales();
   }
 
@@ -50,7 +51,7 @@ export class Restaurantes {
 }
 
   //ir al menu del restaurante
-  gotoMenu(){
-       this.nav.push(MenuPage);
+  gotoMenu(local){
+       this.nav.push(MenuPage,local);
   }
 }

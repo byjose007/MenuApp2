@@ -4,12 +4,6 @@
     <ion-icon name="menu"></ion-icon>
   </button>
   <ion-title>Loja</ion-title>
-
-  <ion-buttons end>
-    <button (click)="presentFilter()">
-      <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
-    </button>
-  </ion-buttons>
 </ion-navbar>
 
 <!--<div class="abiertos"><strong>20 locales abiertos</strong></div>-->
@@ -20,7 +14,7 @@
 
 <ion-content class="getting-started">
        <ion-list>
-            <button *ngFor="#local of locales" ion-item (click)="itemTapped($event,local)">
+            <button *ngFor="#local of locales" ion-item (click)="gotoMenu(local)">
                 <ion-thumbnail item-left>
                     <img src="{{local.logo}}">
                 </ion-thumbnail>
@@ -30,7 +24,16 @@
                     <p info ><ion-icon name="heart"></ion-icon>25</p>
                     <p info ><ion-icon name="md-chatboxes"></ion-icon>12</p>
                 </div>
+              <!--  <button ion-item *ngFor="#menu of local.menus">
+                    <h3>{{menu.nombre}}</h3>
+                    <h3>{{menu.precio}}</h3>
+                </button>-->
+
+            
+
+
             </button>
+
 
         </ion-list>
 
@@ -41,7 +44,7 @@
 
 </ion-content>
 
-<ion-item-divider danger>Cerrados</ion-item-divider>
+
 
 
 <!--<div class="cerrados"><strong>10 locales cerrados</strong></div>-->
